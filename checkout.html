@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>Checkout</h1>
+    </header>
+    <main class="checkout">
+        <div class="container">
+            <h2>Order Summary</h2>
+            <div id="checkout-summary"></div>
+            <div class="checkout-total">
+                <span>Total:</span>
+                <span id="checkout-total-price">$0</span>
+            </div>
+            <div class="checkout-actions">
+                <button class="btn cancel" id="cancel-checkout">Cancel</button>
+                <button class="btn checkout" id="pay-now">Pay Now</button>
+                <a href=""></a>
+            </div>
+        </div>
+    </main>
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const checkoutSummary = document.getElementById('checkout-summary');
+        const checkoutTotalPrice = document.getElementById('checkout-total-price');
+        let total = 0;
+
+        cart.forEach(item => {
+            total += item.price * item.quantity;
+            const itemElement = document.createElement('div');
+            itemElement.innerHTML = `
+                <span>${item.name}</span>
+                <span>${item.quantity} x $${item.price}</span>
+            `;
+            checkoutSummary.appendChild(itemElement);
+        });
+
+        checkoutTotalPrice.innerText = `$${total}`;
+
+        document.getElementById('cancel-checkout').addEventListener('click', () => {
+            const confirmCancel = confirm('Are you sure you want to cancel your order?');
+            if (confirmCancel) {
+                localStorage.removeItem('cart');
+                alert('Order has been canceled.');
+                window.location.href = 'index.html';
+            }
+        });
+
+        document.getElementById('pay-now').addEventListener('click', () => {
+            alert('Payment processing... (to be implemented)');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Carrito</title>
+    <link rel="stylesheet" href="/carrito.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1>Tu Carrito</h1>
+            <a href="index.html" class="main-header__btn">Volver a la Tienda</a>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <h2>Resumen de Compra</h2>
+            <div id="cart-summary"></div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">$0</span>
+            </div>
+            <div class="cart-buttons">
+                <button id="cancel-order-btn" class="btn cancel">Cancel Order</button>
+                <button id="checkout-btn" class="btn checkout">Checkout</button>
+            </div>
+            <button id="close-cart" class="btn close" >
+                <a href="/index.html"></a>Close</button>
+        </div>
+    </div>
+        </div>
+    </main>
+    <footer class="main-footer">
+        <p class="copy">&copy; 2022 Delivery Doña Norma. All Rights Reserved.</p>
+    </footer>
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartSummary = document.getElementById('cart-summary');
+        const cartTotalPrice = document.getElementById('cart-total-price');
+
+        let total = 0;
+        cart.forEach(item => {
+            total += item.price * item.quantity;
+            const itemElement = document.createElement('div');
+            itemElement.innerHTML = `
+                <span>${item.name}</span>
+                <span>${item.quantity} x $${item.price}</span>
+            `;
+            cartSummary.appendChild(itemElement);
+        });
+
+        cartTotalPrice.innerText = `$${total}`;
+        document.getElementById('cancel-order-btn').addEventListener('click', () => {
+    const confirmCancel = confirm('Are you sure you want to cancel your order?');
+    if (confirmCancel) {
+        cart.length = 0; // Vaciar el carrito
+        updateCartUI(); // Actualizar la interfaz
+        alert('Order has been canceled.');
+        document.getElementById('cart-overlay').style.display = 'none';
+    }
+});
+
+document.getElementById('cancel-order-btn').addEventListener('click', () => {
+    const confirmCancel = confirm('Are you sure you want to cancel your order?');
+    if (confirmCancel) {
+        cart.length = 0; // Vaciar el carrito
+        updateCartUI(); // Actualizar la interfaz
+        alert('Order has been canceled.');
+        document.getElementById('cart-overlay').style.display = 'none';
+    }
+});
+
+document.getElementById('checkout-btn').addEventListener('click', () => {
+    if (cart.length === 0) {
+        alert('Your cart is empty.');
+        return;
+    }
+
+    // Guardar el carrito en localStorage para acceder en la nueva página
+    localStorage.setItem('cart', JSON.stringify(cart));
+    // Redirigir a la página de resumen
+    window.location.href = 'checkout.html';
+});
+
+    </script>
+</body>
+</html>
