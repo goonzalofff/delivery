@@ -115,14 +115,14 @@ img {
 .slider {
   display: flex;
   width: 300%;
-  height: 200px;
+  height: 400px;
   margin-left: -100%;
   position: relative;
 }
 .slider:before{
   content: "";
   position: absolute;
-  z-index: 1000;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
