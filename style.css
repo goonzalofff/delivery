@@ -566,7 +566,7 @@ a {
   .slider {
     display: flex;
     width: 300%;
-    height: 130%;
+    height: 430%;
     transition: transform 0.5s ease;
       padding-bottom: 5%; /* Ajusta la relación de aspecto a 4:3 para pantallas más pequeñas */
   }
