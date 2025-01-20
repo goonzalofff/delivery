@@ -359,9 +359,7 @@ a {
 
 /*Estilos para tablet*/
 @media screen and (min-width:768px) {
-  .container{
-    width:750px;
-  }
+  
   .slider{
     height:250px;
   }
