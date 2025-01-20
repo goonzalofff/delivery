@@ -481,6 +481,24 @@ a {
   }
 }
 
+@media screem and (min-width:1400px){
+  .container{
+    width:1500px;
+  }
+  .main-header__container:nth-child(3){
+    padding-left:150px;
+  }
+    .main-header__container:nth-child(2){
+    font-size: 1.5em;
+  }
+  .slider{
+    height: 600px;
+  }
+  .product__img {
+    height: 200px;
+  }
+  
+
 @media screen and (min-width:1600px) { 
   .container{
     width: 1500px;
