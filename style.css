@@ -363,7 +363,7 @@ a {
     width:750px;
   }
   .slider{
-    height: 800px;
+    height:auto;
   }
   .editor__item{
     height: 250px;
