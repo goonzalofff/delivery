@@ -361,6 +361,12 @@ a {
   .slider{
     height: 150px;
   }
+  .main-title{
+  text-align: center;
+  font-size: 35px;
+}
+.cta-button{
+  font-size: 25px;
 
 }
   
