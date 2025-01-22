@@ -489,6 +489,9 @@ a {
     grid-column-start: span 4;
     text-align: center;
   }
+  .slider{
+    height: 400px;
+  }
 }
 
 @media screen and (min-width:1280px) { 
