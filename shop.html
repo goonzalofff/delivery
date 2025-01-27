@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce de Almacén</title>
+  <link rel="stylesheet" href="shop.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+</head>
+<body>
+  <header class="main-header">
+    <h1 class="main-header__title">Delivery Doña Norma</h1>
+    <!-- Botón para volver atrás -->
+    <a href="/formulario.html" class="cta-button" target="_blank">Hace tu pedido 
+        
+        <i class="fas fa-phone"></i>
+    </a>
+    <button id="volverAtras" > <a href="/index.html">volverAtras</a></button>
+    <div class="main-header__container">
+                
+      
+    </header>
+  <section class="container-slider">
+    <div class="slider" id="slider">
+      <div class="slider__section"><img src="/banner1.jpg" alt="Slide 1">
+        <div class="slider__content">
+          <h2 class="slider__title">text</h2>
+          <p class="slider__text">hola</p>
+           <h1 class="slider__clic"><a href="#">clic</a></h1>
+          
+          
+          
+      </div></div>
+      <div class="slider__section"><img src="/banner2.jpg" alt="Slide 2">
+        <div class="slider__content">
+          <h2 class="slider__title"></h2>
+          
+      </div></div>
+      <div class="slider__section"><img src="/banner3.jpg" alt="Slide 3">
+        <div class="slider__content">
+          <h2 class="slider__title"></h2>
+          
+          
+      </div></div>
+    </div>
+  
+    <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
+          <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
+  </section>
+<main>
+    <aside>
+        <h2>Filtros</h2>
+        <input type="text" id="searchBar" placeholder="Buscar productos..."><i class="fas fa-search"></i>
+      <div>
+        <label for="categoryFilter">Categorías:</label>
+        <select id="categoryFilter">
+          <option value="cuidadopersonal">Cuidado Personal</option>
+          <option value="bebidas">Bebidas</option>
+          <option value="alimentos">Alimentos</option>
+          <option value="limpieza">Limpieza</option>
+          <option value="forrageria">Forrageria</option>
+          <option value="almacen">Almacen</option>
+          <option value="all">Todos</option>
+        </select>
+      </div>
+    </aside>
+    <section id="productList">
+      <!-- Productos generados dinámicamente -->
+    </section>
+  </main>
+  <footer class="main-footer">
+    <p class="copy">&copy; 2025 Delivery Doña Norma. All Rights Reserved.</p>
+</footer>
+  <script src="shop.js"></script>
+  <script src="/menu.js"></script>
+  <script src="/slider2.js"></script>
+  
+  
+</body>
+</html>
